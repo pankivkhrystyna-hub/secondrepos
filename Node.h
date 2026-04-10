@@ -8,7 +8,9 @@ struct Node {
 
     std::shared_ptr<Node<T>> next;
 
-    Node(T value) : data(value), next(nullptr) {}
+    std::weak_ptr<Node<T>> prev;
+
+    explicit Node(T value) : data(value), next(nullptr) {}
 };
 
 #endif //SECONDREPOS_NODE_H
